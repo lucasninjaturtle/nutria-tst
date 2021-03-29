@@ -45,14 +45,14 @@ export default function App() {
               <Left>
                 <Thumbnail square source={{ uri:data.image }} />
               </Left>
-              <Body>
+              <Body style={{borderColor:'transparent'}}>
                 <Text>{data.name}</Text>
               </Body>
-              <Right>
+              {/* <Right>
                 <Button onPress={()=>console.log(data)} transparent>
                   <Text>View</Text>
                 </Button>
-              </Right>
+              </Right> */}
             </ListItem>
           </List>
           <Card>
@@ -70,8 +70,8 @@ export default function App() {
             </CardItem>
             
             </Card>
-            <Button onPress={()=>setChange(change+1)} style={{alignSelf:'center'}} title='newuser'>
-              <Text>New User</Text>
+            <Button onPress={()=>setChange(change+1)} style={{alignSelf:'center', marginTop:10}} title='newuser'>
+              <Text>Refresh User</Text>
             </Button>
           </View>
     ) : (<ActivityIndicator style={styles.mainview} size="large" color="#00ff00" />)}
