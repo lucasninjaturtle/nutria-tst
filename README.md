@@ -2,11 +2,11 @@
 
 ## Instrucciones para ejecutar el programa
 
-# clone el repositorio ()=>   git clone https://github.com/lucasninjaturtle/nutria-tst.git
+### clone el repositorio ()=>   git clone https://github.com/lucasninjaturtle/nutria-tst.git
 
-# luego ingrese al repositorio clonado ()=> cd nutria-tst
+### luego ingrese al repositorio clonado ()=> cd nutria-tst
 
-# ejecute expo con npm start
+### ejecute expo con npm start
 
 puede verlo con el celular (iphone mediente la app de expo y el codigo QR del celular) o android-studio
 
