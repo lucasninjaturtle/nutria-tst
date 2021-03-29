@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useEffect, useState} from 'react';
-import { StyleSheet, View, LogBox} from 'react-native';
+import { StyleSheet, View, LogBox, ActivityIndicator} from 'react-native';
 import { List, 
   ListItem,
    Thumbnail, 
@@ -74,7 +74,7 @@ export default function App() {
               <Text>New User</Text>
             </Button>
           </View>
-    ) : (<Text> LOADING ...</Text>)}
+    ) : (<ActivityIndicator style={styles.mainview} size="large" color="#00ff00" />)}
         
         </View>
   );
