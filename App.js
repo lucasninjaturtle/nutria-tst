@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useEffect, useState} from 'react';
-import { StyleSheet, View} from 'react-native';
+import { StyleSheet, View, LogBox} from 'react-native';
 import { List, 
   ListItem,
    Thumbnail, 
@@ -11,6 +11,8 @@ import { List,
    Button,
    Card, CardItem } from 'native-base';
 import axios from 'axios'
+
+LogBox.ignoreAllLogs(true);
 
 export default function App() {
 
