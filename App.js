@@ -1,12 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useEffect, useState} from 'react';
-import { StyleSheet, Text, View , Button} from 'react-native';
+import { StyleSheet, View} from 'react-native';
+import { List, 
+  ListItem,
+   Thumbnail, 
+   Text, 
+   Left, 
+   Body, 
+   Right, 
+   Button,
+   Card, CardItem } from 'native-base';
 import axios from 'axios'
 
 export default function App() {
 
     //importing data
     const [data, setData] = useState({})
+    const [change, setChange] = useState(1)
 
     useEffect(() => {
       
@@ -18,16 +28,53 @@ export default function App() {
       return () => {
           setData()
       }
-  }, [])
+  }, [change])
 
 
 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Button title='consoleLog' onPress={()=>console.log(data)}/>
-      <StatusBar style="auto" />
-    </View>
+    <View>
+    {data ? (
+
+      <View style={styles.mainview}>
+        
+          <List>
+            <ListItem thumbnail>
+              <Left>
+                <Thumbnail square source={{ uri:data.image }} />
+              </Left>
+              <Body>
+                <Text>{data.name}</Text>
+              </Body>
+              <Right>
+                <Button onPress={()=>console.log(data)} transparent>
+                  <Text>View</Text>
+                </Button>
+              </Right>
+            </ListItem>
+          </List>
+          <Card>
+            <CardItem header bordered>
+              <Text>EMAIL</Text>
+              <Right>
+                  <Text>{data.email}</Text>
+              </Right>
+            </CardItem>
+            <CardItem header bordered>
+              <Text>PHONE</Text>
+              <Right>
+                  <Text>{data.phone}</Text>
+              </Right>
+            </CardItem>
+            
+            </Card>
+            <Button onPress={()=>setChange(change+1)} style={{alignSelf:'center'}} title='newuser'>
+              <Text>New User</Text>
+            </Button>
+          </View>
+    ) : (<Text> LOADING ...</Text>)}
+        
+        </View>
   );
 }
 
@@ -38,4 +85,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  mainview:{
+    marginTop:200
+  }
 });
