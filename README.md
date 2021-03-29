@@ -1,4 +1,4 @@
-# NUTRIALUS REACT NATIVE
+# NUTRIALUS REACT NATIVE 🥭
 
 ## Instrucciones para ejecutar el programa
 
